@@ -1,2 +1,2 @@
- i have a first git commit 
+ i have a second  git commit 
 
