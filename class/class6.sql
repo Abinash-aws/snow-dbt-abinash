@@ -1,0 +1,154 @@
+CREATE TABLE  TAB_A  (ID INT) ;
+
+CREATE TABLE  TAB_B  (ID INT) ;
+
+INSERT INTO TAB_A (ID) VALUES (1),(3),(4),(5),(6) ;
+
+INSERT INTO TAB_B (id) VALUES
+(1),
+(2),
+(3),
+(6),
+(7),
+(8);
+
+SELECT * FROM TAB_A   ;
+
+SELECT * FROM TAB_B   ;
+
+
+SELECT A.* ,B.*
+  FROM  TAB_A  A INNER JOIN TAB_B B
+   ON A.ID = B.ID ;
+
+
+SELECT A.* ,B.*
+  FROM  TAB_A  A RIGHT JOIN TAB_B B
+   ON A.ID = B.ID ;
+
+
+SELECT A.* ,B.*
+  FROM  TAB_A  A LEFT JOIN TAB_B B
+   ON A.ID = B.ID ;
+
+
+SELECT A.* ,B.*
+  FROM  TAB_A  A FULL JOIN TAB_B B
+   ON A.ID = B.ID ;
+
+SELECT A.* ,B.*
+  FROM  TAB_A  A CROSS JOIN TAB_B B ;
+
+
+--------------- TASK 
+
+CREATE TABLE  TAB_X  (ID INT) ;
+
+CREATE TABLE  TAB_Y  (ID INT) ;
+
+INSERT INTO TAB_X (id) VALUES
+(1),
+(1),
+(1),
+(2),
+(3),
+(3),
+(5),
+(5),
+(6),
+(8),
+(NULL);
+
+INSERT INTO TAB_Y (id) VALUES
+(1),
+(1),
+(3),
+(3),
+(4),
+(4),
+(6),
+(7),
+(8),
+(8),
+(NULL);
+
+-- INNER JOIN 
+
+SELECT A.* , B.* 
+   FROM TAB_X   A  INNER JOIN TAB_Y  B 
+    ON  A.ID = B.ID ;
+
+-- RIGHT JOIN 
+SELECT A.* , B.* 
+   FROM TAB_X   A  RIGHT JOIN TAB_Y  B 
+    ON  A.ID = B.ID ;
+
+-- LEFT JOIN 
+
+SELECT A.* , B.* 
+   FROM TAB_X   A  LEFT JOIN TAB_Y  B 
+    ON  A.ID = B.ID ;
+
+-- FULL JOIN  
+
+SELECT A.* , B.* 
+   FROM TAB_X   A  FULL JOIN TAB_Y  B 
+    ON  A.ID = B.ID 
+
+-- CROSS JOIN  
+
+SELECT A.* , B.* 
+   FROM TAB_X   A  CROSS JOIN  TAB_Y  B ;
+    
+
+
+SELECT * FROM HR.TCS.EMPLOYEES ;
+
+SELECT * FROM HR.TCS.DEPARTMENTS ;
+
+UPDATE DEPARTMENTS 
+      SET DEPARTMENT_ID = 100 
+      WHERE DEPARTMENT_ID =10 ;
+
+
+  SELECT X.EMPLOYEE_ID,
+          X.FIRST_NAME,
+          X.SALARY,
+          X.DEPARTMENT_ID,
+          Y.DEPARTMENT_NAME 
+   
+   FROM EMPLOYEES X INNER JOIN DEPARTMENTS Y
+        ON X.DEPARTMENT_ID = Y.DEPARTMENT_ID ;
+
+
+ SELECT X.EMPLOYEE_ID,
+          X.FIRST_NAME,
+          X.SALARY,
+          X.DEPARTMENT_ID,
+          Y.DEPARTMENT_NAME 
+   
+   FROM EMPLOYEES X RIGHT JOIN  DEPARTMENTS Y
+        ON X.DEPARTMENT_ID = Y.DEPARTMENT_ID ;
+
+
+ SELECT X.EMPLOYEE_ID,
+          X.FIRST_NAME,
+          X.SALARY,
+          X.DEPARTMENT_ID,
+          Y.DEPARTMENT_NAME 
+   
+   FROM EMPLOYEES X LEFT JOIN DEPARTMENTS Y
+        ON X.DEPARTMENT_ID = Y.DEPARTMENT_ID ;
+
+
+ SELECT X.EMPLOYEE_ID,
+          X.FIRST_NAME,
+          X.SALARY,
+          X.DEPARTMENT_ID,
+          Y.DEPARTMENT_NAME 
+   
+   FROM EMPLOYEES X FULL JOIN DEPARTMENTS Y
+        ON X.DEPARTMENT_ID = Y.DEPARTMENT_ID ;
+
+
+
